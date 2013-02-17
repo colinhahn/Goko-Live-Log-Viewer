@@ -50,19 +50,25 @@ Dom.LogManager.prototype.addLog = function (opt) {
 		newLogText += opt.text + '</br>';
 	    }
 	}
-	document.getElementById("myCanvas").style.marginLeft="0px";
-	var w = window.innerWidth - 960 - 10;
-	var t = window.innerHeight/2 - 320;
-	newLog.setAttribute("style", "position:absolute; overflow:auto; left:960px; width:"+w+"px; top:"+t+"px; height:640px; background-color: white; z-index: -1");
-	newLog.innerHTML = newLogText;
-	newLog.scrollTop = newLog.scrollHeight;
+	newLogAlign();
     }
     this.old_addLog(opt);
 };
-//function newLogAlign() {
-//    setTimeout('newLogAlign()', 1000/2);
-//}
-//newLogAlign();
+
+//positions log on right of screen
+function newLogAlign() {
+	document.getElementById("myCanvas").style.marginLeft="0px";
+	var w =  Math.max(window.innerWidth - 960 - 70, 200);
+	var t = window.innerHeight/2 - 320;
+	newLog.setAttribute("style", "position:absolute; overflow:auto; left:1020px; width:"+w+"px; top:"+t+"px; height:640px; background-color: white; z-index: -1");
+	newLog.innerHTML = newLogText;
+	newLog.scrollTop = newLog.scrollHeight;
+}
+window.onresize = function(){setTimeout('newLogAlign()', 10);}
+
+//shows scroll bar
+$('body').css('overflow', 'visible')
+
 function addStyle(style) {
 var head = document.getElementsByTagName('head')[0];
 var ele = head.appendChild(window.document.createElement('style'));
