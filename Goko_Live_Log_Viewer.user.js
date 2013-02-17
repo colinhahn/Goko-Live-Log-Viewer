@@ -64,7 +64,7 @@ function newLogAlign() {
 	newLog.innerHTML = newLogText;
 	newLog.scrollTop = newLog.scrollHeight;
 }
-window.onresize = function(){setTimeout('newLogAlign()', 10);}
+window.onresize = function(){setTimeout('newLogAlign()', 10);};
 
 //shows scroll bar
 $('body').css('overflow', 'visible')
