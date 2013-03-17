@@ -143,6 +143,12 @@ $(document).ready(function() { var hook = function() {
 	vp-chip\
 	 { background-color:rgb(0,0,0) ; border-radius: 6px;\
 	   color:rgb(255,255,255) ; }\
+	action-victory\
+	{ background: -moz-linear-gradient(top, rgb(240,240,240), rgb(146,193,125));\
+	  background: -webkit-linear-gradient(top, rgb(240,240,240), rgb(146,193,125));\
+	  background: -o-linear-gradient(top, rgb(240,240,240), rgb(146,193,125));\
+	  background: -ms-linear-gradient(top, rgb(240,240,240), rgb(146,193,125));\
+	  background: linear-gradient(top, rgb(240,240,240), rgb(146,193,125)); border-radius: 6px; }\
 	treasure-victory\
 	{ background: -moz-linear-gradient(top, rgb(253,225,100), rgb(146,193,125));\
 	  background: -webkit-linear-gradient(top, rgb(253,225,100), rgb(146,193,125));\
